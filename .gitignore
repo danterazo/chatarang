@@ -9,7 +9,11 @@
 # production
 /build
 
+# webstorm
+.idea/
+
 # misc
+desktop.ini
 .DS_Store
 .env.local
 .env.development.local
