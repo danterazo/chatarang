@@ -60,30 +60,4 @@ const styles = {
 	}
 }
 
-/*
-
-
-.MessageForm .chatIcon {
-
-}
-
-.MessageForm input {
-
-}
-.MessageForm input:focus {
-  outline: 0;
-}
-
-.MessageForm button {
-  font-size: 1.5rem;
-  background-color: #1A8FE3;
-  color: white;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border: 1px solid white;
-}
- */
-
 export default MessageForm
