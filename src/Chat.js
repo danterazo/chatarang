@@ -1,31 +1,48 @@
 import React, {Component} from 'react'
 
-import ChatHeader from './ChatHeader';
-import MessageList from './MessageList';
+import ChatHeader from './ChatHeader'
+import MessageList from './MessageList'
 import MessageForm from './MessageForm'
 
 class Chat extends Component{
 	constructor(){
 		super()
+
 		this.state = {
 			messages: [
-				{id: 1, userName: 'drazo', body: 'hello!!'},
-				{id: 2, userName: 'dstrus', body: 'hello!'},
-			]
+				{
+					id: 1,
+					user: {
+						uid: 123,
+						displayName: 'Dante',
+						email: 'dante@email.com',
+					},
+					body: 'hello!!',
+				},
+				{
+					id: 2,
+					user: {
+						uid: 456,
+						displayName: 'Davey',
+						email: 'davey@fretless.com',
+					},
+					body: 'I enjoy chatting.',
+				},
+			],
 		}
 	}
 
 	addMessage = (body) =>{
 		const messages = [...this.state.messages]
-		const userName = 'dante'
+		const user = this.props.user
 
 		messages.push({
-			id: `${userName}-${Date.now()}`,
-			userName, // set username attribute to username variable
-			body, 	// set body attribute to body (input)
+			id: `${user.uid}-${Date.now()}`,
+			user,
+			body,
 		})
 
-		this.setState({messages: messages})
+		this.setState({messages})
 	}
 
 	render(){
