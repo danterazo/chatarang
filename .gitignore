@@ -9,7 +9,7 @@
 # production
 /build
 
-# webstorm
+#webstorm
 .idea/
 
 # misc
