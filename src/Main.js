@@ -21,11 +21,4 @@ const styles = {
 	height: '100vh', // 'vh' percentage of height of window
 }
 
-/*
-TODO:
-- avatar
-- sidebar CSS
-
- */
-
 export default Main

@@ -34,6 +34,7 @@ const Sidebar = (props) =>{
 	)
 }
 
+// TODO: fix link style
 const styles = {
 	sidebar: {
 		backgroundColor: '#333344',

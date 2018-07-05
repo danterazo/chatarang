@@ -6,6 +6,7 @@ const Avatar = (props) =>{
 	)
 }
 
+// TODO: add Avatar to site
 const styles = {
 	height: "40px",
 	width: "40px",
