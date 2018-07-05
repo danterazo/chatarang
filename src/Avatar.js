@@ -1,8 +1,11 @@
 import React from 'react'
 
 const Avatar = (props) =>{
+	const imageURL = `https://api.adorable.io/avatars/40/${props.user.email}.png`
+
 	return (
-		<div className="Avatar" style={styles}>placeholder</div>
+		<div className="Avatar" style={...styles, backgroundImage: `url(${imageURL})`,}>
+		</div>
 	)
 }
 
