@@ -1,24 +1,21 @@
 import React from 'react'
 
-const Message = (props) =>{
+import Avatar from './Avatar'
+import Metadata from './Metadata'
+
+const Message = ({message}) =>{
 	return (
-		<div className="Message" style={style1}>
-			{props.message.user.displayName}: {props.message.body}
+		<div className="Message">
+			<Avatar user={message.user}/>
+
+			<div className="details">
+				<Metadata message={message}/>
+				<div className="body">
+					{message.body}
+				</div>
+			</div>
 		</div>
 	)
 }
-
-const style1 = {
-	display: "flex",
-	marginTop: "1rem",
-	padding: "0 1rem",
-}
-
-/*
-.Message .details {
-  flex: 1;
-  padding-left: 0.5rem;
-}
-*/
 
 export default Message
