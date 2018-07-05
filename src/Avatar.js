@@ -1,15 +1,13 @@
 import React from 'react'
 
 const Avatar = ({user}) =>{
-	const imageURL = `https://api.adorable.io/avatars/40/${user.email}.png`
+	const imageUrl = `https://api.adorable.io/avatars/40/${user.email}.png`
 
 	return (
-		<div className="Avatar" style={...styles, backgroundImage: `url(${imageURL})`,}>
-		</div>
+		<div className="Avatar" style={{...styles, backgroundImage: `url(${imageUrl})`,}}></div>
 	)
 }
 
-// TODO: add Avatar to site
 const styles = {
 	height: "40px",
 	width: "40px",
@@ -17,6 +15,5 @@ const styles = {
 	borderRadius: "20px",
 	marginRight: "0.5rem",
 }
-
 
 export default Avatar
