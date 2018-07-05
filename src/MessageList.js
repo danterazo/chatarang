@@ -4,14 +4,10 @@ import Message from './Message'
 
 const MessageList = (props) =>{
 	return (
-		<div
-			className="MessageList"
-			style={styles.messageList}
-		>
-			<div
-				className="roomAnnouncement"
-				style={styles.roomAnnouncement}
-			>
+		<div className="MessageList"
+			 style={styles.messageList}>
+			<div className="roomAnnouncement"
+				 style={styles.roomAnnouncement}>
 				<h3 style={styles.h3}>
 					#general
 				</h3>
