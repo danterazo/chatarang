@@ -3,8 +3,9 @@ import React, {Component} from 'react'
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
 import MessageForm from './MessageForm'
+import base from './base'
 
-class Chat extends Component{
+class Chat extends Component {
 	constructor(){
 		super()
 
@@ -24,6 +25,15 @@ class Chat extends Component{
 		})
 
 		this.setState({messages})
+	}
+
+
+	componentWillMount(){
+		base.syncState('messages', {
+			context: this,
+			state: 'messages',
+			asArray: true,
+		})
 	}
 
 	render(){
