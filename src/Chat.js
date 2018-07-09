@@ -29,11 +29,15 @@ class Chat extends Component {
 
 
 	componentWillMount(){ // first argument in syncState is name of firebase data folder
-		base.syncState('messages', {
+		this.messagesRef = base.syncState('messages', {
 			context: this,
 			state: 'messages',
 			asArray: true,
 		})
+	}
+
+	componentWillUnmount(){
+		base.removeBinding(this.messagesRef)
 	}
 
 	render(){
