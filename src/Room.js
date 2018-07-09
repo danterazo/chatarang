@@ -3,7 +3,7 @@ import {StyleSheet, css} from 'aphrodite'
 
 const Room = ({roomName}) =>{
 	return (
-		<li className={css(styles.item} key={roomName}>
+		<li className={css(styles.item)} key={roomName}>
 			<a href="/" className={css(styles.link)}>
 				{roomName}
 			</a>
