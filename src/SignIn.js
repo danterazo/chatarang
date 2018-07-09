@@ -1,9 +1,24 @@
 import React, {Component} from 'react'
 import {StyleSheet, css} from 'aphrodite'
 
+import {auth, googleProvider} from './base'
+
 class SignIn extends Component {
 	state = {
 		email: '',
+	}
+
+	authenticate = () =>{
+		auth.signInWithPopup(googleProvider)
+			.then(result =>{
+				const {user} = result
+				this.props.handleAuth({
+					uid: user.uid,
+					displayName: user.displayName,
+					email: user.email,
+					photoUrl: user.photoURL,
+				})
+			})
 	}
 
 	handleChange = (ev) =>{
