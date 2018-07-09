@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {StyleSheet, css} from 'aphrodite'
 
-import {auth, googleProvider} from './base'
+import {auth, googleProvider, githubProvider} from './base'
 
 class SignIn extends Component {
 	state = {
