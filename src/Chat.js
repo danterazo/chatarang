@@ -28,7 +28,7 @@ class Chat extends Component {
 	}
 
 
-	componentWillMount(){
+	componentWillMount(){ // first argument in syncState is name of firebase data folder
 		base.syncState('messages', {
 			context: this,
 			state: 'messages',
