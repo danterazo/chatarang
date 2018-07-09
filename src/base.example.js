@@ -3,7 +3,6 @@ import 'firebase/database'
 import 'firebase/auth'
 import Rebase from 're-base'
 
-
 // Initialize Firebase
 const config = {
 	apiKey: "YOUR API KEY",
@@ -19,6 +18,7 @@ const app = firebase.initializeApp(config)
 // Configure authentication
 export const auth = firebase.auth()
 export const googleProvider = new firebase.auth.GoogleAuthProvider()
+export const githubProvider = new firebase.auth.GithubAuthProvider()
 
 // Configure database
 const db = firebase.database(app)
