@@ -45,15 +45,8 @@ class SignIn extends Component {
 				</header>
 				<main className={css(styles.main)}>
 					<form className={css(styles.form)} onSubmit={this.handleSubmit}>
-						<label
-							htmlFor="email"
-							className={css(styles.label)}>
-							Email
-						</label>
-						<input autoFocus type="email" name="email" className={css(styles.input)}
-							   value={this.state.email} onChange={this.handleChange}/>
-						<button type="submit" className={css(styles.button)}>
-							Sign In
+						<button type="button" className={css(styles.button)} onClick={this.authenticate}>
+							Sign in with Google
 						</button>
 					</form>
 
