@@ -6,18 +6,18 @@ import Chat from './Chat'
 class Main extends Component {
 	state = {
 		room: {
-			name: "s3morning",
+			name: "general",
 			description: "Ask questions and share code",
 		},
 
 		rooms: {
-			s3morning: {
-				name: "s3morning",
+			general: {
+				name: "general",
 				description: "",
 			},
 
-			general: {
-				name: "general",
+			s3morning: {
+				name: "s3morning",
 				description: "",
 			},
 
@@ -36,7 +36,7 @@ class Main extends Component {
 	render(){
 		return (
 			<div className="Main" style={styles}>
-				<Sidebar user={this.props.user} signOut={this.props.signOut}/>
+				<Sidebar user={this.props.user} rooms={this.state.rooms} signOut={this.props.signOut}/>
 				<Chat user={this.props.user} room={this.state.room}/>
 			</div>
 		)

@@ -1,21 +1,18 @@
 import React from 'react'
-
 import Message from './Message'
 
 const MessageList = ({messages, room}) =>{
 	return (
-		<div className="MessageList"
-			 style={styles.messageList}>
-			<div className="roomAnnouncement"
-				 style={styles.roomAnnouncement}>
+		<div className="MessageList" style={styles.messageList}>
+			<div className="roomAnnouncement" style={styles.roomAnnouncement}>
 				<h3 style={styles.h3}>
-					{room.name}
+					{`#${room.name}`}
 				</h3>
 				<p>This is the very beginning of the #general room.</p>
 			</div>
 
 			{
-				props.messages.map(msg => (
+				messages.map(msg => (
 					<Message message={msg} key={msg.id}/>
 				))
 			}

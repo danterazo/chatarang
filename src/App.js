@@ -43,8 +43,6 @@ class App extends Component {
 
 	signOut = () =>{
 		auth.signOut()
-		this.setState({user: {}})
-		localStorage.removeItem('user')
 	}
 
 	handleUnauth = () =>{
