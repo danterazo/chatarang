@@ -1,31 +1,37 @@
-import React, {Component} from 'react'
+import React, {Component} from "react"
 
-import Sidebar from './Sidebar'
-import Chat from './Chat'
+import Sidebar from "./Sidebar"
+import Chat from "./Chat"
+import base from "./base"
 
 class Main extends Component {
 	state = {
 		room: {
 			name: "general",
-			description: "Ask questions and share code",
+			description: "Chat about stuff",
 		},
 
-		rooms: {
-			general: {
-				name: "general",
-				description: "",
-			},
+		rooms: {},
+	}
 
-			s3morning: {
-				name: "s3morning",
-				description: "",
-			},
+	componentDidMount(){
+		this.roomsRef = base.syncState(
+			"rooms",
+			{
+				context: this,
+				state: "rooms",
+				defaultValue: {
+					general: {
+						name: "general",
+						description: "Chat about stuff",
+					}
+				}
+			}
+		)
+	}
 
-			random: {
-				name: "random",
-				description: "",
-			},
-		},
+	componentWillUnmount(){
+		base.removeBinding(this.roomsRef)
 	}
 
 	setCurrentRoom = roomName =>{
@@ -45,9 +51,9 @@ class Main extends Component {
 
 // Styling in JavaScript
 const styles = {
-	display: 'flex',
-	alignItems: 'stretch',
-	height: '100vh', // 'vh' percentage of height of window
+	display: "flex",
+	alignItems: "stretch",
+	height: "100vh", // "vh" percentage of height of window
 }
 
 export default Main
