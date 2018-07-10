@@ -29,11 +29,28 @@ class Chat extends Component {
 
 
 	componentWillMount(){ // first argument in syncState is name of firebase data folder
-		this.messagesRef = base.syncState('messages', {
-			context: this,
-			state: 'messages',
-			asArray: true,
-		})
+		this.syncMessages()
+	}
+
+	componentDidUpdate(prevProps, _prevState, _snapshot){
+		//underscore before variables means that they're passed in but not being used
+		if(prevProps.room.name !== this.props.room.name){
+			this.syncMessages()
+		}
+	}
+
+	syncMessages = () =>{
+		if(this.messagesRef){	// stop syncing with old
+			base.removeBinding(this.messagesRef)
+		}
+
+		// sync new
+		this.messagesRef = base.syncState(`messages/${this.props.room.name}`,
+			{
+				context: this,
+				state: 'messages',
+				asArray: true,
+			})
 	}
 
 	componentWillUnmount(){
