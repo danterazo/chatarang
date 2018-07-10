@@ -2,7 +2,7 @@
 The final project for Xtern Bootcamp 2018 Session 3. Based on [Davey's version](https://github.com/xtbc18s3/chatarang).
 
 ## Day 8 Homework
-* Set the current room when you click a romm in the sidebar.
+* Set the current room when you click a room in the sidebar.
 
 ### Bonus Credit
 * Sync the list of rooms with Firebase (using `base.syncState()`).
