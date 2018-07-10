@@ -34,7 +34,7 @@ class App extends Component {
 			photoUrl: oAuthUser.photoURL,
 		}
 
-		this.setState({user})
+		this.setState(user)
 	}
 
 	signedIn = () =>{

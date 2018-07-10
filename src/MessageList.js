@@ -8,7 +8,7 @@ const MessageList = ({messages, room}) =>{
 				<h3 style={styles.h3}>
 					{`#${room.name}`}
 				</h3>
-				<p>This is the very beginning of the #general room.</p>
+				<p>This is the very beginning of the {room} room.</p>
 			</div>
 
 			{
