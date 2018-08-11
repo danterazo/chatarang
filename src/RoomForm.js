@@ -9,7 +9,7 @@ class RoomForm extends Component {
 	}
 
 	handleChange = ev =>{
-		const roomCopy = {...this.state.room}
+		const room = {...this.state.room}
 		room[ev.target.name] = ev.target.value
 
 		this.setState({room})
