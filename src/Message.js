@@ -5,12 +5,8 @@ import Metadata from './Metadata'
 
 const Message = ({message}) =>{
 	return (
-		<div
-			className="Message"
-			style={styles.message}
-		>
+		<div className="Message" style={styles.message}>
 			<Avatar user={message.user}/>
-
 			<div style={styles.details}>
 				<Metadata message={message}/>
 				<div className="body">
