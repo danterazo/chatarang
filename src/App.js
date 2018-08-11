@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
-import {auth} from './base'
+import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom'
 
 import './App.css'
+import {auth} from './base'
 import Main from './Main'
 import SignIn from './SignIn'
+import SignUp from './SignUp'
 
 class App extends Component {
 	constructor(){
@@ -33,8 +35,8 @@ class App extends Component {
 			email: oAuthUser.email,
 			photoUrl: oAuthUser.photoURL,
 		}
-
-		this.setState(user)
+		this.setState({user})
+		localStorage.setItem('user', JSON.stringify(user))
 	}
 
 	signedIn = () =>{
@@ -52,11 +54,44 @@ class App extends Component {
 
 	render(){
 		return (
-			<div className="App">{
-				this.signedIn() // ternary
-					? <Main user={this.state.user} signOut={this.signOut}/>
-					: <SignIn handleAuth={this.handleAuth}/>
-			}
+			<div className="App">
+				<BrowserRouter>
+					<Switch>
+						<Route path="/sign-up" render={() => (
+							this.signedIn()
+							? <Redirect to="/chat"/>
+							: <SignUp updateUser={this.updateUser}/>
+						)}/>
+						<Route path="/sign-in" render={() => (
+							this.signedIn()
+							? <Redirect to="/chat"/>
+							: <SignIn/>
+						)}/>
+						<Route path="/chat/rooms/:roomName" render={(navProps) => (
+							this.signedIn()
+							? <Main
+								user={this.state.user}
+								signOut={this.signOut}
+								{...navProps}
+							/>
+							: <Redirect to="/sign-in"/>
+						)}/>
+						<Route path="/chat" render={(navProps) => (
+							this.signedIn()
+							? <Main
+								user={this.state.user}
+								signOut={this.signOut}
+								{...navProps}
+							/>
+							: <Redirect to="/sign-in"/>
+						)}/>
+						<Route render={() => (
+							this.signedIn()
+							? <Redirect to="/chat"/>
+							: <Redirect to="/sign-in"/>
+						)}/>
+					</Switch>
+				</BrowserRouter>
 			</div>
 		)
 	}
