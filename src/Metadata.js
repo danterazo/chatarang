@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 const Metadata = ({message}) =>{
 	return (
@@ -6,7 +7,7 @@ const Metadata = ({message}) =>{
 			<div style={styles.user}>
 				{message.user.displayName}
 			</div>
-			<div style={styles.time}>1:10 PM</div>
+			<div style={styles.time}>{moment(message.created).format('D MMM @ h:m A')}</div>
 		</div>
 	)
 }
