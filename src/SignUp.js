@@ -89,7 +89,6 @@ class SignUp extends Component {
 						</button>
 
 						<p className={css(styles.error)}>{this.state.errorMessage}</p>
-
 						<p>Already a member? <Link to="/sign-in">Sign in</Link>!</p>
 					</form>
 
