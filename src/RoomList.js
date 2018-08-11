@@ -10,13 +10,14 @@ const RoomList = ({rooms, setCurrentRoom, showRoomForm}) =>{
 				<h2 className={css(styles.h2)}>
 					Rooms
 				</h2>
-				<button onClick={showRoomForm}/>
+				<button className={css(styles.button)} onClick={showRoomForm}>
+					<i className="fas fa-plus-circle" title="Add room"/>
+				</button>
 			</div>
 			<ul className={css(styles.list)}>
 				{
 					Object.keys(rooms).map(
-						roomName => <Room roomName={roomName}
-										  setCurrentRoom={setCurrentRoom} key={roomName}/>,
+						roomName => <Room roomName={roomName} setCurrentRoom={setCurrentRoom} key={roomName}/>,
 					)
 				}
 			</ul>
@@ -41,8 +42,8 @@ const styles = StyleSheet.create({
 
 	heading: {
 		display: 'flex',
-		justifyContent:,
-
+		justifyContent: 'space-between',
+		alignItems: 'center',
 	},
 
 	button: {
