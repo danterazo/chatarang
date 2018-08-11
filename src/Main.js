@@ -71,8 +71,7 @@ class Main extends Component {
 	}
 }
 
-// Styling in JavaScript
-const styles = {
+const styles = { // Styling in JavaScript
 	display: "flex",
 	alignItems: "stretch",
 	height: "100vh", // "vh" percentage of height of window
